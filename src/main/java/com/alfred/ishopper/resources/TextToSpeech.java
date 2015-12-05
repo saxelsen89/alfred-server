@@ -3,13 +3,6 @@ package com.alfred.ishopper.resources;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 import org.apache.commons.codec.binary.Base64;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.RestTemplate;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -28,7 +21,7 @@ public class TextToSpeech {
     @GET
     @Timed
     public String sayHello() {
-        RestTemplate template = new RestTemplate();
+        /*RestTemplate template = new RestTemplate();
         String plainCreds = username+":"+password;
         byte[] plainCredsBytes = plainCreds.getBytes();
         byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
@@ -50,11 +43,11 @@ public class TextToSpeech {
         ResponseEntity<Object> response = template.exchange(url, HttpMethod.GET, request, Object.class);
 
         System.out.println(response);
-
+        */
         return "What up!!!";
     }
 
-    public HttpHeaders createHeaders(final String username, final String password ){
+    /*public HttpHeaders createHeaders(final String username, final String password ){
         return new HttpHeaders(){
             {
                 String auth = username + ":" + password;
@@ -64,5 +57,5 @@ public class TextToSpeech {
                 set( "Authorization", authHeader );
             }
         };
-    }
+    }*/
 }
