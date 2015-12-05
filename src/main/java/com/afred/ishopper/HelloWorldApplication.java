@@ -1,5 +1,6 @@
 package com.afred.ishopper;
 
+import com.alfred.ishopper.resources.TextToSpeech;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -29,5 +30,6 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
             configuration.getDefaultName()
         );
         environment.jersey().register(resource);
+        environment.jersey().register(new TextToSpeech());
     }
 }
